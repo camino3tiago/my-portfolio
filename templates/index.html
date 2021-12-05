@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+
+<div class='m-4'>
+
+    <div style='height:650px; width:100%;' class='d-inline-block'>
+        <h1 class='fw-bolder fst-italic' style='background-image: url({% static "top_bg.jpeg" %}); background-size: cover; background-color: rgba(255, 255, 255, 0.5); height:100%; display:flex; align-items:center; color:white; padding-left:150px; font-size:48px; text-shadow: 2px 2px 2px grey;'>
+            Motoki's Portfolio<span class='fs-5' style='display:block; padding:30px 50px; text-shadow: 2px 2px 2px grey;'>駆け出しエンジニア Motoki のポートフォリオサイトです。</span>
+        </h1>
+    </div>
+
+</div>
+
+{% endblock main %}

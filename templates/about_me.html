@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block main %}
+<div class='m-4'>
+
+    <div class='p-4 w-75 bg-white' style='margin:25px auto;'>
+        <h3 class='fst-italic text-muted border-bottom border-4 border-warning d-inline-block'>Profile</h3>
+
+        <div class='m-3'>
+            <p>出身: {{ profile.come_from }}</p>
+            <p>年齢: {{ age }}歳</p>
+            <p>趣味: {{ profile.hobby }}</p>
+
+            <hr>
+
+            <div class='m-auto' >
+                {{ profile.career|linebreaksbr }}
+            </div>
+
+            <p class='my-3'>GitHub: <a href='https://github.com/camino3tiago/'>https://github.com/camino3tiago/</a></p>
+        </div>
+
+    </div>
+
+    <div class='p-4 w-75 bg-white' style='margin:25px auto;'>
+        <a href='{% url "services" %}' class='text-decoration-none link-secondary'>
+            <h3 class='fst-italic border-bottom border-4 border-warning d-inline-block'>Developments</h3>
+        </a>
+        <p>{% now 'Y年m月d日' %}現在までに{{ num_services|intcomma }}個のサービスを作りました！</p>
+
+        <ul>
+            {% for service in services %}
+            <a><li >{{ service }}</li></a>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class='p-4 w-75 bg-white' style='margin:25px auto;'>
+        <h3 class='fst-italic text-muted border-bottom border-4 border-warning d-inline-block'>Skill</h3>
+        {% for skill in skills %}
+        {{ skill.name }}
+        {% endfor %}
+        <div class='m-3'>
+        <h5>Languages</h5>
+        <ul>
+            {% for language in languages %}
+            <li>{{ language }}</li>
+            {% endfor %}
+        </ul>
+
+        <h5>Frameworks</h5>
+        <ul>
+            {% for framework in frameworks %}
+            <li>{{ framework }}</li>
+            {% endfor %}
+        </ul>
+
+        <h5>Others</h5>
+            <ul>
+            {% for other in others %}
+            <li>{{ other }}</li>
+            {% endfor %}
+            </ul>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
+
+
+---------------------------
+現在できること
+---------------------------
+## アプリ側
+- フロント言語：HTML, CSS, JavaScript, jQuery, PHP
+- フレームワーク：Bootstrap, WordPress
+- サーバー設定, ドメイン設定
+## 各種ツール
+Filezila
+Github
+Visual Studio Code
+Slack
+
+----------------------------
+学んでいることについて
+----------------------------
+・現在、～について学んでいます。
+----------------------------
+
+最近開発中に苦労したこと
+----------------------------
+・～の機能実装を行う際に、xxxのエラーが出ていましたが、
+ Qiitaなどを参考に解決することができました。
+----------------------------
+
+このさきやってみたいこと
+----------------------------
+----------------------------
+
+ポートフォリオ
+----------------------------
+
+
+
+READMEに記載する内容
+✔　サービスの概要
+✔　想定されたユーザー
+✔　ユーザーが持つ課題
+✔　課題の解決方法（このサービスでどうやって解決するか）
+
+
+
+ポートフォリオ作成のポイント
+1 シンプルに見やすく作る
+2 コードを綺麗に整える
+3 ユーザー目線で設計を考える
+4 どんな意図で作ったのかを説明できる
+5 オリジナリティがある
+6 こだわりポイントを記載する
+7 使用技術や選定理由を明記する
+
+
+
+Step1　ポートフォリオで取り上げるアプリやプログラムを製作する
+
+入社後に実務で使いたいと思う言語や、得意な言語を選んで製作する
+CRUD操作（作成、読み出し、更新、削除）を行えること
+自分が使いたいと思う機能を選び製作する（テキストの例題をそのまま使うと、評価が大きく下がる）
+単一目的のアプリなど、簡単なものでOK。機能を多く持つと、それだけ難しくなる
+
+Step2　ソースコードを公開する
+
+Step3　アプリの概要や選定理由、こだわったポイントをまとめる
+
+アプリの概要（どのようなサービスなのか、など）
+なぜこのアプリを作ろうと思ったのか
+使用した技術、およびその技術を選んだ理由
+製作する際にこだわったポイント
+製作において苦労した点
+
+Step4　スキルシートを作成し、ポートフォリオに記載する
+
+氏名や略歴。社会人経験がある方は職歴も記入する
+実務で使える、あるいはこれまで学んだ技術
+得意な分野
+現在学んでいること。また今後強化したいこと
+将来の目標や、今後取り組みたいこと
+連絡先や、使用しているSNSなど
+
+Step5　レイアウトをまとめ、公開する

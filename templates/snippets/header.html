@@ -1,0 +1,12 @@
+<div class="navbar p-3 navbar-light justify-content-start">
+
+    <a href="{% url 'top' %}" class='mx-3 fw-bolder link-dark'>Home</a>
+
+    {% if 'about' not in request.path %}
+    <a href="{% url 'about' 1 %}" class='mx-3 fw-bolder link-dark'>About me</a>
+    {% endif %}
+    
+    {% if 'services' not in request.path %}
+    <a href='{% url "services" %}' class='mx-3 fw-bolder link-dark'>Services</a>
+    {% endif %}
+</div>

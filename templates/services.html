@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block main %}
+<div class='m-4'>
+
+    <div class='p-4 w-75 bg-white' style='margin:25px auto;'>
+        <h3 class='fst-italic text-muted border-bottom border-4 border-warning d-inline-block'>Developments</h3>
+
+        {% for service in services %}
+        <div class='p-3'>
+            <h4 class='fw-bold py-1'>{{ service.name }}</h4>
+            <h6 class='fw-bolder'>[使用言語等]</h6>
+            <p>{% for skill in service.skills.all %}
+            {{ skill }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}</p>
+            <h6 class='fw-bolder'>[概要]</h6>
+            <p>{{ service.outline|linebreaksbr }}</p>
+            <h6 class='fw-bolder'>[制作において]</h6>
+            <p>{{ service.description|linebreaksbr }}</p> 
+            {% if service.service_url %}<a href='{{ service.service_url }}'><p>{{ service.service_url }}</p></a>{% endif %}
+            <a href='{{ service.code_url }}'><p>GitHub</p></a>
+        </div>
+        {% endfor %}
+
+        <!--div class='p-3'>
+            <h5 class='fw-bold'>ブログアプリ</h5>
+            <h6 class='fw-bolder'>[概要]</h6>
+            <p>ログイン機能つきのブログサイトです。<br>
+            投稿の閲覧はログインの有無に関わらず全ユーザーができます。各投稿にカテゴリー、タグ（任意）をつけられるようにしており、気になるカテゴリー、タグにジャンプできるようになっております。<br>
+            また、ログインしたユーザーのみが使用できる、コメント欄（閲覧は全ユーザー可）や、いいねボタンも実装しております。
+            </p>
+            
+            <h6 class='fw-bolder'>[苦労した点]</h6>
+            <p>初めてゼロから作成したアプリだったので、カテゴリーごと、タグごとページ
+            </p>                        
+            
+            <a href='https://django-mysite-323510.an.r.appspot.com/'><p>Google Cloud Platformで公開</p></a>
+            <a href=''><p>GitHub</p></a>
+        </div>
+
+        <div class='p-3'>
+            <h5 class='fw-bold'>Todo共有アプリ</h5>
+            
+            <h6 class='fw-bolder'>[概要]</h6>
+            <p>やりたいことリストを他人と共有できるTodoアプリとSNSを組み合わせたようなアプリです。<br>
+            自分のみでの使用も可能ですが、Friend機能をつけており、リストをFriendと共有することもできます。<br>
+            また、公開と非公開を選択できる機能があります。例えば、誰かと一緒にやりたいことを公開設定にすると、FriendおよびFriendのFriendに公開されるので、仲間集めに利用できます。<br>
+            すぐには実行できないやりたいことを考えるだけでも、楽しい気持ちになれると思い、製作しました。
+            </p>
+            
+            <h6 class='fw-bolder'>[苦労した点]</h6>
+            <p>Friend機能の実装において、モデルの定義をどうすべきかに苦慮しました。</p>
+            <a href=''><p>GitHub</p></a>    
+    
+        </div>
+
+        <div class='p-3'>
+            <h5 class='fw-bold'>ECショッピングアプリ</h5>
+
+            <h6 class='fw-bolder'>[概要]</h6>
+            <p>
+            </p>
+            
+            <h6 class='fw-bolder'>[苦労した点]</h6>
+            <p>買い物かごの情報を保持する方法が難しく、実装に時間を要しました。<br>
+            また、Herokuにデプロイする際、環境変数が読み込まれず、エラーに悩まされました。</p>
+
+            <a href='https://ec-mercado.herokuapp.com/'><p>Herokuで公開</p></a>
+            <a href=''><p>GitHub</p></a>        
+        </div>
+
+        <div class='p-3'>
+            <h5 class='fw-bold'>天気予報アプリ</h5>
+            <a href=''><p>GitHub</p></a>
+        
+        </div-->
+
+    </div>
+
+</div>
+{% endblock %}
