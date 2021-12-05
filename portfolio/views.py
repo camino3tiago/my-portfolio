@@ -19,7 +19,7 @@ class AboutMeView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context['age'] = get_age(context['profile'])
+        context['age'] = get_age(context['profile'])
         context['services'] = Service.objects.prefetch_related('skills').filter(developer=context['profile'])
         context['num_services'] = len(context['services'])
         context['num_skill_category'] = 4
