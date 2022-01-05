@@ -19,7 +19,14 @@
             <h6 class='fw-bolder'>[制作において]</h6>
             <p>{{ service.description|linebreaksbr }}</p> 
             {% if service.service_url %}<a href='{{ service.service_url }}'><p>{{ service.service_url }}</p></a>{% endif %}
-            <a href='{{ service.code_url }}'><p>GitHub</p></a>
+                {% if service.name == "Share Do" %}
+                <div class="m-2">--- サンプルID --------------<br>
+                email: sample@example.com<br>
+                password: mypassdesu<br>
+                -----------------------------
+                </div>
+                {% endif %}
+                <a href='{{ service.code_url }}'><p>GitHub</p></a>
         </div>
         {% endfor %}
 
