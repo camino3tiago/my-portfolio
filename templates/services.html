@@ -9,6 +9,7 @@
 
         {% for service in services %}
         <div class='p-3'>
+
             <h4 class='fw-bold py-1'>{{ service.name }}</h4>
             <h6 class='fw-bolder'>[使用言語等]</h6>
             <p>{% for skill in service.skills.all %}
@@ -21,13 +22,15 @@
             {% if service.service_url %}<a href='{{ service.service_url }}'><p>{{ service.service_url }}</p></a>{% endif %}
                 {% if service.name == "Share Do" %}
                 <div class="m-2">--- サンプルID --------------<br>
+                username: sample_user<br>
                 email: sample@example.com<br>
                 password: mypassdesu<br>
                 -----------------------------
                 </div>
                 {% endif %}
-                <a href='{{ service.code_url }}'><p>GitHub</p></a>
+            <a href='{{ service.code_url }}'><p>GitHub</p></a>
         </div>
+        <hr style="color:#FDC10A; padding:3px;">
         {% endfor %}
 
         <!--div class='p-3'>
