@@ -3,8 +3,8 @@ from .models import Profile, Service
 from django.contrib.auth import get_user_model
 import datetime
 import math
-# from django.utils.decorators import method_decorator
-# from django.views.decorators.clickjacking import xframe_options_exempt
+from django.utils.decorators import method_decorator
+from django.views.decorators.clickjacking import xframe_options_exempt
 
 
 class IndexView(TemplateView):
