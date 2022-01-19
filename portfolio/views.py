@@ -3,6 +3,9 @@ from .models import Profile, Service
 from django.contrib.auth import get_user_model
 import datetime
 import math
+# from django.utils.decorators import method_decorator
+# from django.views.decorators.clickjacking import xframe_options_exempt
+
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -45,6 +48,7 @@ class AboutMeView(DetailView):
         context['skills'] = all_skills
         return context
 
+@method_decorator(xframe_options_exempt, name='dispatch')
 class ServiceView(ListView):
     template_name = 'services.html'
     model = Service
