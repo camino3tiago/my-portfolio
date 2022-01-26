@@ -56,13 +56,14 @@
             {% endfor %}
         </ul>
 
+        {% if others %}
         <h5>Others</h5>
             <ul>
             {% for other in others %}
             <li>{{ other }}</li>
             {% endfor %}
             </ul>
-
+        {% endif %}
         </div>
 
     </div>
